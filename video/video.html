@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Player</title>
+</head>
+<link rel="stylesheet" href="../video/video.css">
+<body>
+
+  <div class="video-player">
+    <div class="video-container">
+      <div class="title">
+  
+        <h3 class="video">KYTRAME-Destroy the System</h3>
+        <h3 class="category">MUSIC VIDEO</h3>
+      </div>
+      <iframe id="video-iframe" src="" frameborder="0" allowfullscreen allow="autoplay; loop"></iframe>
+    </div>
+
+    <div class="thumbnail-container">
+      <div class="thumbnail">
+        <img id="thumb1" src="" alt="Thumbnail 1">
+      </div>
+      <div class="thumbnail">
+        <img id="thumb2" src="" alt="Thumbnail 2">
+      </div>
+      <!-- <div class="thumbnail">
+        <img id="thumb3" src="" alt="Thumbnail 3">
+      </div>
+      <div class="thumbnail">
+        <img id="thumb4" src="" alt="Thumbnail 4">
+      </div> -->
+    </div>
+    <footer class="footer">
+      <div class="footer-item"><a href="./index.html">HOME</a></div>
+    </footer>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const video = urlParams.get('video'); 
+    const thumb1 = urlParams.get('thumb1'); 
+    const thumb2 = urlParams.get('thumb2'); 
+    // const thumb3 = urlParams.get('thumb3');
+    // const thumb4 = urlParams.get('thumb4'); 
+
+    document.getElementById('video-iframe').src =`${video === "video1" && "https://player.vimeo.com/video/1018292873"
+    || video==="video2" && "https://player.vimeo.com/video/1015126970"  || video==="video3" && "https://player.vimeo.com/video/847586298"
+     || video==="video4" && "https://player.vimeo.com/video/847586298"  || video==="video5" && "https://player.vimeo.com/video/984788301"
+      || video==="video6" && "https://player.vimeo.com/video/903793397"  || video==="video7" && "https://player.vimeo.com/video/769109091"
+       || video==="video8" && "https://player.vimeo.com/video/769109091"  || video==="video9" && "https://player.vimeo.com/video/1015126970/"
+
+    }`;
+    
+    document.getElementById('thumb1').src = `../thumbnail/${thumb1}`;
+    document.getElementById('thumb2').src = `../thumbnail/${thumb2}`
+    // document.getElementById('thumb3').src = `thumbnail/${thumb3}`;
+    // document.getElementById('thumb4').src = `thumbnail/${thumb4}`;
+  </script>
+
+</body>
+</html>
